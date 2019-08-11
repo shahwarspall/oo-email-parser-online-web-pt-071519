@@ -2,12 +2,12 @@
 class EmailAddressParser
 attr_accessor :emails
 
-def initialize(emails)
+def initialize(email)
   @emails = email
 end
 
 def parse
-emails.split(", ").map {|email| email.split(" ")}.flatten.uniq
+  emails.delete(',').split.uniq
 end
 
 end 
